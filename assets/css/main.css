@@ -1,21 +1,21 @@
 :root {
-  --bg: #f7f5f1;
-  --fg: #2f3a42;
-  --accent: #5f7f8f;
-  --accent-secondary: #7a9a8a;
-  --bg-alt: #e9eef2;
-  --bg-muted: #dce5ea;
-  --fg-muted: #5f6d76;
-  --hero-title: #eef4f7;
-  --hero-subtitle: #c9d8df;
-  --btn-fill-bg: rgba(247, 245, 241, 0.94);
-  --btn-fill-fg: #2f3a42;
-  --footer-bg: #d5e0e6;
-  --footer-fg: #4a5962;
+  --bg: #ffffff;
+  --fg: #2c2834;
+  --accent: #8f74b0;
+  --accent-secondary: #a67fa8;
+  --bg-alt: #ebe6f2;
+  --bg-muted: #e0dbe6;
+  --fg-muted: #6a6272;
+  --hero-title: #c5e6e8;
+  --hero-subtitle: #b8a2d4;
+  --btn-fill-bg: #f0e8f2;
+  --btn-fill-fg: #3d3348;
+  --footer-bg: #a59bb0;
+  --footer-fg: #3a3442;
   --max: 1120px;
   --header-h: 72px;
   --radius-pill: 100px;
-  --shadow-card: 0 10px 28px rgba(47, 58, 66, 0.07);
+  --shadow-card: 0 10px 30px rgba(90, 70, 120, 0.1);
   --font-display: "Outfit", "Albert Sans", sans-serif;
   --font-body: "Albert Sans", "Outfit", sans-serif;
 }
@@ -129,7 +129,7 @@ a {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(180deg, rgba(55, 78, 92, 0.28) 0%, rgba(40, 58, 70, 0.46) 100%),
+    linear-gradient(180deg, rgba(70, 50, 90, 0.14) 0%, rgba(60, 42, 80, 0.24) 100%),
     url("../img/hero.jpg") center / cover no-repeat;
   transform: scale(1.02);
   animation: hero-zoom 18s ease-in-out infinite alternate;
@@ -151,7 +151,9 @@ a {
   font-weight: 800;
   letter-spacing: -0.03em;
   color: var(--hero-title);
-  text-shadow: 0 2px 18px rgba(35, 55, 68, 0.35);
+  text-shadow:
+    0 1px 0 rgba(70, 50, 90, 0.12),
+    0 8px 28px rgba(60, 42, 80, 0.35);
   line-height: 1.05;
 }
 
@@ -197,8 +199,8 @@ a {
 .btn-primary {
   background: var(--btn-fill-bg);
   color: var(--btn-fill-fg);
-  border: 1.5px solid rgba(238, 244, 247, 0.9);
-  box-shadow: 0 8px 20px rgba(35, 55, 68, 0.18);
+  border: 1.5px solid var(--accent);
+  box-shadow: 0 8px 20px rgba(143, 116, 176, 0.22);
 }
 
 .btn-primary:hover {
@@ -206,13 +208,13 @@ a {
 }
 
 .btn-outline {
-  background: transparent;
-  color: #eef4f7;
-  border: 1.5px solid rgba(201, 216, 223, 0.85);
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--fg);
+  border: 1.5px solid rgba(35, 32, 36, 0.75);
 }
 
 .btn-outline:hover {
-  background: rgba(238, 244, 247, 0.12);
+  background: #fff;
 }
 
 /* Feature cards */
@@ -256,11 +258,11 @@ a {
   width: 72px;
   height: 72px;
   border-radius: 50%;
-  background: linear-gradient(145deg, #6f92a0 0%, #7a9a8a 100%);
+  background: var(--accent);
   display: grid;
   place-items: center;
   margin-bottom: 8px;
-  box-shadow: 0 8px 18px rgba(95, 127, 143, 0.22);
+  box-shadow: 0 10px 24px rgba(143, 116, 176, 0.3);
 }
 
 .feature-icon img {
@@ -325,7 +327,9 @@ a {
 
 /* Inner pages */
 .page-hero {
-  background: var(--bg-alt);
+  background:
+    linear-gradient(135deg, rgba(143, 116, 176, 0.14), rgba(166, 127, 168, 0.12)),
+    var(--bg-alt);
   padding: 72px 24px 56px;
   text-align: center;
 }
@@ -377,7 +381,7 @@ a {
 
 .placeholder-note code {
   font-size: 0.92em;
-  background: rgba(95, 127, 143, 0.1);
+  background: rgba(143, 116, 176, 0.12);
   padding: 2px 6px;
   border-radius: 6px;
 }
@@ -417,7 +421,7 @@ a {
   border: 1px solid rgba(90, 85, 96, 0.12);
   border-left: 4px solid var(--blog-color);
   border-radius: 16px;
-  box-shadow: 0 8px 20px rgba(42, 41, 39, 0.05);
+  box-shadow: 0 8px 20px rgba(90, 70, 120, 0.05);
   overflow: hidden;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   animation: fade-up 0.55s ease both;
@@ -478,7 +482,7 @@ a {
   background: #fff;
   border: 1px solid rgba(90, 85, 96, 0.12);
   border-radius: 18px;
-  box-shadow: 0 8px 20px rgba(42, 41, 39, 0.04);
+  box-shadow: 0 8px 20px rgba(90, 70, 120, 0.04);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -508,7 +512,7 @@ a {
   display: inline-block;
   padding: 3px 10px;
   border-radius: 999px;
-  background: rgba(95, 127, 143, 0.12);
+  background: rgba(143, 116, 176, 0.14);
   color: var(--accent);
   font-size: 0.8rem;
   font-weight: 600;
@@ -547,7 +551,9 @@ a {
 
 /* Single post */
 .post-header {
-  background: var(--bg-alt);
+  background:
+    linear-gradient(135deg, rgba(143, 116, 176, 0.14), rgba(166, 127, 168, 0.12)),
+    var(--bg-alt);
   padding: 64px 24px 48px;
 }
 
@@ -622,8 +628,8 @@ a {
   overflow-x: auto;
   padding: 16px;
   border-radius: 12px;
-  background: #eef3f5;
-  border: 1px solid rgba(95, 127, 143, 0.14);
+  background: #f2edf6;
+  border: 1px solid rgba(90, 85, 96, 0.1);
 }
 
 .post-body-inner code {
@@ -631,7 +637,7 @@ a {
 }
 
 .post-body-inner :not(pre) > code {
-  background: rgba(95, 127, 143, 0.1);
+  background: rgba(143, 116, 176, 0.12);
   padding: 1px 6px;
   border-radius: 6px;
 }
