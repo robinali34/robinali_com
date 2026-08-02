@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<article class="post-page">
+  <header class="post-header">
+    <div class="post-header-inner">
+      <p class="post-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+        {% if page.categories.size > 0 %}
+        <span class="post-cats">
+          {% for cat in page.categories %}
+          <span class="cat-chip">{{ cat }}</span>
+          {% endfor %}
+        </span>
+        {% endif %}
+      </p>
+      <h1 class="post-title">{{ page.title }}</h1>
+      <p class="post-back"><a href="{{ '/blogs/' | relative_url }}">← All blogs</a></p>
+    </div>
+  </header>
+
+  <div class="post-body">
+    <div class="post-body-inner">
+      {{ content }}
+    </div>
+  </div>
+</article>

@@ -1,0 +1,69 @@
+title: robinali.com
+description: Robina's track recordings
+author: Robina Li
+github_username: robinali34
+
+# GitHub Pages + custom domain
+url: https://www.robinali.com
+baseurl: ""
+
+# Build
+markdown: kramdown
+permalink: pretty
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      permalink: /blogs/:year/:month/:day/:title/
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md
+  - .github
+
+# Topic-focused blogs hub (from https://robinali34.github.io/) — shown on /topics/
+topic_blogs:
+  - name: "Coding & Algorithms"
+    blogs:
+      - name: "Algorithms Blog"
+        url: "https://robinali34.github.io/blog_algorithms/"
+        description: "Algorithms blog for notes, courses, and resources"
+        color: "#9b59b6"
+      - name: "LeetCode Blog (C++)"
+        url: "https://robinali34.github.io/blog_leetcode/"
+        description: "Algorithms, data structures, and LeetCode solutions in C++"
+        color: "#4a90e2"
+      - name: "LeetCode Blog (Python)"
+        url: "https://robinali34.github.io/blog_leetcode_python/"
+        description: "LeetCode solutions and templates in Python"
+        color: "#3776ab"
+      - name: "LeetCode Blog (Java)"
+        url: "https://robinali34.github.io/blog_leetcode_java/"
+        description: "Algorithms, data structures, and LeetCode solutions in Java"
+        color: "#f89820"
+  - name: "Reading"
+    blogs:
+      - name: "Book Reading Notes"
+        url: "https://robinali34.github.io/blog_book_notes/"
+        description: "Reflections, summaries, and takeaways from books I'm reading"
+        color: "#8e44ad"
+  - name: "System Design"
+    blogs:
+      - name: "System Design Blog"
+        url: "https://robinali34.github.io/blog_system_design/"
+        description: "Scalable architectures, distributed systems, and design patterns"
+        color: "#e74c3c"
+      - name: "C++ & Systems Blog"
+        url: "https://robinali34.github.io/blog_cpp/"
+        description: "C++ programming, embedded systems, and system design"
+        color: "#16a085"

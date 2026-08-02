@@ -1,0 +1,66 @@
+---
+layout: default
+title: robinali.com
+body_class: home
+permalink: /
+---
+
+<section class="hero" aria-label="Hero">
+  <div class="hero-media" role="img" aria-label="Wisteria flowers"></div>
+  <div class="hero-content">
+    <h1 class="hero-title">Have Fun<span class="hero-tilde">~</span></h1>
+    <p class="hero-subtitle">Robina’s track recordings — writing, notes, and topic blogs</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="{{ '/blogs/' | relative_url }}">Blogs</a>
+      <a class="btn btn-outline" href="{{ '/topics/' | relative_url }}">Topics</a>
+    </div>
+  </div>
+</section>
+
+<section class="feature-section" aria-label="Explore">
+  <div class="feature-grid feature-grid-2">
+    <a class="feature-card" href="{{ '/blogs/' | relative_url }}">
+      <span class="feature-icon" aria-hidden="true">
+        <img src="{{ '/assets/icons/blogs.svg' | relative_url }}" alt="">
+      </span>
+      <h2>Blogs</h2>
+      <p>Personal posts — reflections, interviews, and practice notes</p>
+    </a>
+    <a class="feature-card" href="{{ '/topics/' | relative_url }}">
+      <span class="feature-icon" aria-hidden="true">
+        <img src="{{ '/assets/icons/topics.svg' | relative_url }}" alt="">
+      </span>
+      <h2>Topics</h2>
+      <p>Focused hubs for algorithms, LeetCode, systems, and reading</p>
+    </a>
+  </div>
+</section>
+
+{% if site.posts.size > 0 %}
+<section class="home-posts" aria-label="Recent posts">
+  <div class="home-posts-inner">
+    <div class="home-posts-header">
+      <h2>Recent writing</h2>
+      <a class="home-posts-all" href="{{ '/blogs/' | relative_url }}">All blogs →</a>
+    </div>
+    <div class="post-list post-list-home">
+      {% for post in site.posts limit:3 %}
+      <article class="post-card">
+        <div class="post-card-meta">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+          {% for cat in post.categories %}
+          <span class="cat-chip">{{ cat }}</span>
+          {% endfor %}
+        </div>
+        <h3 class="post-card-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h3>
+        {% if post.excerpt %}
+        <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncate: 140 }}</p>
+        {% endif %}
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}

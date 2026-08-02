@@ -1,0 +1,41 @@
+---
+layout: default
+title: Blogs
+permalink: /blogs/
+footer_text: Restart since 2025
+---
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <h1>Blogs</h1>
+    <p>Log what done — writing from robinali.com</p>
+  </div>
+</section>
+
+<section class="content-section">
+  <div class="content-inner">
+    <div class="post-list">
+      {% for post in site.posts %}
+      <article class="post-card">
+        <div class="post-card-meta">
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+          {% if post.categories.size > 0 %}
+          <span class="post-card-cats">
+            {% for cat in post.categories %}
+            <span class="cat-chip">{{ cat }}</span>
+            {% endfor %}
+          </span>
+          {% endif %}
+        </div>
+        <h2 class="post-card-title">
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        </h2>
+        {% if post.excerpt %}
+        <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncate: 180 }}</p>
+        {% endif %}
+        <a class="post-card-more" href="{{ post.url | relative_url }}">Read more</a>
+      </article>
+      {% endfor %}
+    </div>
+  </div>
+</section>

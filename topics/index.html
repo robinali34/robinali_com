@@ -1,0 +1,41 @@
+---
+layout: default
+title: Topics
+permalink: /topics/
+footer_text: Restart since 2025
+---
+
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <h1>Topics</h1>
+    <p>Topic-focused blogs — coding, reading, and systems</p>
+  </div>
+</section>
+
+<section class="blogs-section">
+  <div class="blogs-inner">
+    {% for category in site.topic_blogs %}
+    <div class="blog-category">
+      <h2 class="category-title">{{ category.name }}</h2>
+      <div class="blog-grid">
+        {% for blog in category.blogs %}
+        <a href="{{ blog.url }}" target="_blank" rel="noopener" class="blog-link" data-color="{{ blog.color }}">
+          <div class="blog-link-title">{{ blog.name }}</div>
+          <div class="blog-link-description">{{ blog.description }}</div>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+
+    <div class="blog-category">
+      <h2 class="category-title">Other</h2>
+      <div class="blog-grid">
+        <a href="https://github.com/{{ site.github_username }}" target="_blank" rel="noopener" class="blog-link" data-color="#333333">
+          <div class="blog-link-title">GitHub Profile</div>
+          <div class="blog-link-description">Check out my repositories</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
