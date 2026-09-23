@@ -51,6 +51,10 @@ topic_blogs:
         url: "https://robinali34.github.io/blog_leetcode_java/"
         description: "Algorithms, data structures, and LeetCode solutions in Java"
         color: "#c4a574"
+      - name: "LeetCode Blog (Rust)"
+        url: "https://robinali34.github.io/blog_leetcode_rust/"
+        description: "Algorithms, data structures, and LeetCode solutions in Rust"
+        color: "#b5654a"
   - name: "Reading"
     blogs:
       - name: "Book Reading Notes"
